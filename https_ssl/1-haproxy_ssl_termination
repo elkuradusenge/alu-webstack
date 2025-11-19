@@ -12,7 +12,7 @@ global
         ca-base /etc/ssl/certs
         crt-base /etc/ssl/private
 
-        # See: https://ssl-config.mozilla.org/#server=haproxy&server-version=2.0.3&config=intermediate
+        # See: https://ssl-config.mozilla.org/#server=haproxy&server-version=2.0.4&config=intermediate
         ssl-default-bind-ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384
         ssl-default-bind-ciphersuites TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256
         ssl-default-bind-options ssl-min-ver TLSv1.2 no-tls-tickets
@@ -38,7 +38,8 @@ frontend lb-frontend
         bind *:443 ssl crt /etc/letsencrypt/live/www.kuradusenge.tech/my_cert.pem
         mode http
         default_backend lb-backend
+
 backend lb-backend
-        balance roundrobin
-        server 6892-web-01 107.29.79.99:80 check
-        server 6892-web-02 44.201.120.55:80 check
+        balance roundrobin        
+        server 6827-web-01 34.205.64.207:80 check
+        server 6827-web-02 107.23.7.227:80 check

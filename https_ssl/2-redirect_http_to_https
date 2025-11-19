@@ -47,5 +47,5 @@ frontend kuradusenge-frontend-https
 
 backend kuradusenge-backend
         balance roundrobin
-        server 6247-web-01 54.221.156.73:80 check
-        server 6247-web-02 18.212.220.153:80 check
+  		server 6827-web-01 34.205.64.207:80 check
+        server 6827-web-02 107.23.7.227:80 check
